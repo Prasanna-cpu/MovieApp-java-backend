@@ -4,4 +4,4 @@
 
 ## This project uses maven build tool ##
 
-## If you want to run the project , use ./mvnw spring-boot:run to run the application ##
+### If you want to run the project , use ./mvnw spring-boot:run to run the application ###
