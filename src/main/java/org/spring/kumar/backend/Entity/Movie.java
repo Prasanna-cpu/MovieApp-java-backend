@@ -32,7 +32,7 @@ public class Movie {
 
     private List<String> genres;
 
-    private List<String> backdropUrls;
+    private List<String> backdrops;
 
     @DocumentReference
     private List<Review> reviewIds;

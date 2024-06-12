@@ -7,15 +7,13 @@ import org.spring.kumar.backend.Service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/movies")
+@CrossOrigin(origins = "http://localhost:7000", allowedHeaders = "*")
 public class MovieController {
 
     private final MovieService movieService;
@@ -25,11 +23,13 @@ public class MovieController {
         this.movieService = movieService;
     }
 
+
     @GetMapping("/all")
     public ResponseEntity<List<Movie>> allMovies(){
         List<Movie> allMovies = movieService.getAllMovies();
         return new ResponseEntity<>(allMovies, HttpStatus.OK);
     }
+
 
     @GetMapping("/movie/{id}")
     public ResponseEntity<Movie> getMovieById(@PathVariable String id){
